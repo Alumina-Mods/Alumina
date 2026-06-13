@@ -1,7 +1,7 @@
 package net.nerfashton.alumina;
 
-import net.minecraft.world.item.CreativeModeTabs;
 import net.nerfashton.alumina.block.ModBlocks;
+import net.nerfashton.alumina.block.entity.ModBlockEntities;
 import net.nerfashton.alumina.item.ModCreativeModeTabs;
 import net.nerfashton.alumina.item.ModItems;
 import org.slf4j.Logger;
@@ -39,9 +39,10 @@ public class Alumina {
 
         ModCreativeModeTabs.register(modEventBus);
 
-        ModItems.createIngots();
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us

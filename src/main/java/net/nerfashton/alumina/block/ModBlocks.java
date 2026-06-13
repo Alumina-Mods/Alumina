@@ -9,6 +9,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.nerfashton.alumina.Alumina;
+import net.nerfashton.alumina.block.custom.GasBurnerBlock;
 import net.nerfashton.alumina.item.ModItems;
 
 import java.util.function.Supplier;
@@ -26,6 +27,8 @@ public class ModBlocks {
                     .sound(SoundType.METAL)
                     .strength(2f)
             ));
+    public static final DeferredBlock<GasBurnerBlock> GAS_BURNER = registerBlock("gas_burner",
+            () -> new GasBurnerBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

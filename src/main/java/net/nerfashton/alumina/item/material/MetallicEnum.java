@@ -35,7 +35,7 @@ public enum MetallicEnum {
     LUTETIUM,
     MAGNESIUM,
     MANGANESE,
-    MERCURY,
+    //MERCURY, //this one is a liquid
     MOLYBDENUM,
     NEODYMIUM,
     NEPTUNIUM,
@@ -57,14 +57,14 @@ public enum MetallicEnum {
     RUTHENIUM,
     SAMARIUM,
     SCANDIUM,
-    SELENIUM,
     SILVER,
     SODIUM,
     STRONTIUM,
     TANTALUM,
-    TELLURIUM,
     TERBIUM,
     THALLIUM,
+    THORIUM,
+    THULIUM,
     TIN,
     TITANIUM,
     TUNGSTEN,
@@ -73,7 +73,11 @@ public enum MetallicEnum {
     YTTERBIUM,
     YTTRIUM,
     //ZINC,
-    ZIRCONIUM;
+    ZIRCONIUM,
+
+    //Alloys
+    HASTELLOY,
+    STAINLESS_STEEL;
 
 
     public static ArrayList<String> getMetals() {

@@ -13,7 +13,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        for (var item : ModItems.REGISTERED_METALS) {
+        for (var item : ModItems.REGISTERED_ELEMENTS) {
             try {
                 basicItem(item.get());
             } catch(Exception e) {

@@ -17,12 +17,13 @@ public class ModCreativeModeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Alumina.MOD_ID);
 
     public static final Supplier<CreativeModeTab> ITEMS_TAB = CREATIVE_MODE_TAB.register("items_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.REGISTERED_METALS.getFirst().get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.REGISTERED_ELEMENTS.getFirst().get()))
                     .title(Component.translatable("creativetab.alumina.items_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        for (var item : ModItems.REGISTERED_METALS) {
+                        for (var item : ModItems.REGISTERED_ELEMENTS) {
                             output.accept(item.get());
                             }
+                        output.accept(ModItems.GAS_TANK);
                     }).build());
 
     public static final Supplier<CreativeModeTab> BLOCKS_TAB = CREATIVE_MODE_TAB.register("blocks_tab",
@@ -32,6 +33,7 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.HASTELLOY_CASING);
                         output.accept(ModBlocks.STAINLESS_STEEL_CASING);
+                        output.accept(ModBlocks.GAS_BURNER);
                     }).build());
 
     public static void register(IEventBus eventBus) {
